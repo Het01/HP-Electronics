@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require("cookie-parser");
+
 const app = express();
 const port = 5000;
 
@@ -23,6 +25,7 @@ mongoDB();
 
 app.use(express.json())
 app.use(cors(corsOptions))
+app.use(cookieParser())
 app.use('/api',require("./Routes/CreateUser"));
 app.use('/api',require("./Routes/DisplayData"));
 app.use('/api',require("./Routes/OrderData"));
