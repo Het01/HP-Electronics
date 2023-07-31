@@ -76,7 +76,12 @@ router.post("/loginuser",
                 }
             }
             const authToken = jwt.sign(data , jwtSecret)
-            res.json({success:true , authToken:authToken});
+              res.cookie('accessToken',token,{
+            httpOnly : true,
+            expires:token.expiresIn,
+            sameSite:"none",
+            secure:true,
+        }).status(200).json({success:true , authToken:authToken});
         }
         catch(error){
             console.log(error)
