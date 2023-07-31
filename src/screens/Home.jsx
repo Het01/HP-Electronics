@@ -15,10 +15,6 @@ function Home() {
     const loadData = async () => {
         const response = await fetch("https://hp-electronics.onrender.com/api/foodData", {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-
         });
 
         const respons = await response.json();
