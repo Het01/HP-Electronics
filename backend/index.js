@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 const corsOptions ={
-    origin:[process.env.FRONTEND_URL],
+    origin:true,
     methods: ["GET","POST","PUT","DELETE"],
     credentials:true
 }
