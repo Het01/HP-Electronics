@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 const corsOptions ={
-    origin:['https://vercel.com/het01/hp-electronics'],
+    origin:['https://hp-electronics.vercel.app/'],
     methods: ["GET","POST","PUT","DELETE"],
     credentials:true
 }
