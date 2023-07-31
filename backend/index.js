@@ -1,6 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 5000;
+
+const corsOptions ={
+    origin:['https://vercel.com/het01/hp-electronics'],
+    methods: ["GET","POST","PUT","DELETE"],
+    credentials:true
+}
 
 const mongoDB = require('./db');
 mongoDB();
@@ -15,6 +22,7 @@ app.use((req,res,next)=>{
 })
 
 app.use(express.json())
+app.use(cors(corsOptions))
 app.use('/api',require("./Routes/CreateUser"));
 app.use('/api',require("./Routes/DisplayData"));
 app.use('/api',require("./Routes/OrderData"));
