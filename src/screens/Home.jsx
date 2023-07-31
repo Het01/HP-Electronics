@@ -13,7 +13,13 @@ function Home() {
     const [search, setsearch] = useState("")
 
     const loadData = async () => {
-        const response = await fetch("https://hp-electronics.onrender.com/api/foodData");
+        const response = await fetch("https://hp-electronics.onrender.com/api/foodData", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
+        });
 
         const respons = await response.json();
         // console.log(respons[0] , respons[1]);
