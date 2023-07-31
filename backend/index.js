@@ -6,7 +6,7 @@ const app = express();
 const port = 5000;
 
 const corsOptions ={
-    origin:['https://hp-electronics.vercel.app/'],
+    origin:['https://hp-electronics.vercel.app'],
     methods: ["GET","POST","PUT","DELETE"],
     credentials:true
 }
@@ -15,7 +15,7 @@ const mongoDB = require('./db');
 mongoDB();
 
 app.use((req,res,next)=>{
-  res.setHeader("Access-Control-Allow-Origin", "https://hp-electronics.vercel.app/");
+  res.setHeader("Access-Control-Allow-Origin", "https://hp-electronics.vercel.app");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
