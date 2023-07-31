@@ -15,7 +15,7 @@ const mongoDB = require('./db');
 mongoDB();
 
 app.use((req,res,next)=>{
-  res.setHeader("Access-Control-Allow-Origin", "https://vercel.com/het01/hp-electronics");
+  res.setHeader("Access-Control-Allow-Origin", "https://hp-electronics.vercel.app/");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
